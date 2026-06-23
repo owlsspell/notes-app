@@ -1,0 +1,19 @@
+<h1>My notes:</h1>
+<!-- <ul>
+  <li *ngFor="let note of notes()">
+    <strong>{{ note.title }}</strong>
+    {{ note.content }}
+    <small>{{ note.createdAt | date: 'short' }}</small>
+  </li>
+</ul> -->
+<ul>
+  @for (note of notes(); track note.id) {
+    <li>
+      <strong>{{ note.title }}</strong>
+      {{ note.content }}
+      <small>{{ note.createdAt | date: 'short' }}</small>
+    </li>
+  } @empty {
+    <li>Notes not found</li>
+  }
+</ul>
